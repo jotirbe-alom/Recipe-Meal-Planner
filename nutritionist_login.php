@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     {
 
         //read from database
-        $query = "select * from nutritionists_table where nutritionist_email = '$nutritionist_email' limit 1";
+        $query = "select * from nutritionists_table where Nutritionist_email = '$nutritionist_email' limit 1";
         $result = mysqli_query($conn, $query);
 
         if($result)
@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 if($nutritionist_data['Nutritionist_password'] === $nutritionist_password)
                 {
 
-                    $_SESSION['nutritionist_id'] = $nutritionist_data['nutritionist_id'];
+                    $_SESSION['Nutritionist_id'] = $nutritionist_data['Nutritionist_id'];
                     header("Location: nutritionist_home.php");
                     die;
                 }
