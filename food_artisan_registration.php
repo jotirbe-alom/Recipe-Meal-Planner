@@ -18,7 +18,7 @@ session_start();
 			$query = "insert into food_artisan_table (food_artisan_id,food_artisan_email,food_artisan_password) values ('$food_artisan_id','$food_artisan_email','$food_artisan_password')";
 
 			mysqli_query($conn, $query);
-            header("Location: food_artisan_login.html");
+
 			
 			die;
 		}else
