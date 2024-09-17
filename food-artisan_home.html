@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-Artisan Home</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="food-artisan_home.css">
+</head>
+<body>
+<nav class="navgation-bar">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="#" class="logo">Food-Artisan Workspace</a>
+
+      <ul class="navgation-bar-links">
+        <i class="uil uil-times navCloseBtn"></i>
+        
+        <li><a href="log_out_food_artisan.php">Log Out</a></li>
+      </ul>
+    </nav>
+    
+    <div class="container mt-5">
+        <form action="upload_recipe.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="text">Recipe_Name:</label>
+                <input type="text" class="form-control" name="recipe_name">
+            </div>
+            
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" class="form-control-file" name="image" id="image">
+            </div>
+            <div class="form-group">
+                <label for="text">Procedure:</label>
+                <textarea class="form-control" name="procedure_text" id="text" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="text">Dish_Type:</label>
+                <input type="text" class="form-control" name="dish_type">
+            </div>
+            <div class="form-group">
+                <label for="text">Dietary_Choice:</label>
+                <input type="text" class="form-control" name="dietary_choice">
+            </div>
+            <div class="form-group">
+                <label for="text">BMI_Range:</label>
+                <input type="text" class="form-control" name="bmi_range">
+            </div>
+            <div class="form-group">
+                <label for="text">Budget_Range:</label>
+                <input type="text" class="form-control" name="budget_range">
+            </div>
+            <button type="submit" class="btn btn-success">Upload</button>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

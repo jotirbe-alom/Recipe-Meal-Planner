@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+h2{
+    margin:auto 10px;
+}
+.feedback-image{
+    margin: 50px 10px;
+    display: flex;
+    justify-content: left;
+}

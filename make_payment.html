@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-option {
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Make a Payment</h2>
+
+    <label for="payment-method">Payment Method:</label>
+    <select id="payment-method">
+        <option value="">-- Select Payment Method --</option>
+        <option value="cash">Cash</option>
+        <option value="card">Card</option>
+    </select>
+
+    <div id="cash-section" class="payment-option hidden">
+        <form action="payment.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" name="phone" id="phone" required>
+
+            <label for="subscription">Subscription:</label>
+            <select name="subscription" id="subscription">
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+
+            <button type="submit" name="payment_method" value="cash">Download Receipt</button>
+        </form>
+    </div>
+
+    <div id="card-section" class="payment-option hidden">
+        <form action="payment.php" method="POST">
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="card-phone">Phone Number:</label>
+            <input type="text" name="phone" id="card-phone" required>
+
+            <label for="card-number">Card Number:</label>
+            <input type="text" name="card_number" id="card-number" required>
+
+            <button type="submit" name="payment_method" value="card">Make Payment</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const paymentMethodSelect = document.getElementById('payment-method');
+    const cashSection = document.getElementById('cash-section');
+    const cardSection = document.getElementById('card-section');
+
+    paymentMethodSelect.addEventListener('change', function() {
+        if (this.value === 'cash') {
+            cashSection.classList.remove('hidden');
+            cardSection.classList.add('hidden');
+        } else if (this.value === 'card') {
+            cardSection.classList.remove('hidden');
+            cashSection.classList.add('hidden');
+        } else {
+            cashSection.classList.add('hidden');
+            cardSection.classList.add('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>

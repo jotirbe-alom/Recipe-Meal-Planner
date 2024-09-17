@@ -1,0 +1,81 @@
+/* temp1.css */
+
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.navgation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    background: #2a9c8f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navgation-bar,
+  .navgation-bar .navgation-bar-links {
+    display: flex;
+    align-items: center;
+  }
+  .navgation-bar {
+    justify-content: space-between;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .navgation-bar .logo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff
+  }
+  .navgation-bar .navgation-bar-links {
+    column-gap: 20px;
+    list-style: none;
+  }
+  .navgation-bar .navgation-bar-links a {
+    transition: all 0.2s linear;
+  }
+  
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+textarea,
+input[type="file"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
